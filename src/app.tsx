@@ -29,6 +29,14 @@ export function createApp(config: RigConfig = loadConfig()) {
 
   app.get('/health', (c) => c.json({ ok: true, lane: lane().id }));
 
+  app.get('/api/digest/:night', (c) => {
+    const night = c.req.param('night');
+    if (!isNightIdentifier(night)) return c.notFound();
+    if (!existsSync(join(config.runsDir, `${night}.jsonl`))) return c.notFound();
+
+    return c.json(readNight(config.runsDir, night).rows);
+  });
+
   app.get('/digest/:night', (c) => {
     const night = c.req.param('night');
     if (!isNightIdentifier(night)) return c.notFound();
