@@ -17,4 +17,14 @@ describe('status board', () => {
     const res = await createApp(config).request('/health');
     expect(await res.json()).toEqual({ ok: true, lane: 'lane-07' });
   });
+
+  it('links each night to its digest with final-status counts', async () => {
+    const res = await createApp(config).request('/');
+    const html = await res.text();
+
+    expect(html).toContain('<a href="/digest/2026-10-28">2026-10-28</a>');
+    expect(html).toContain('ok 4 · retry 0 · fail 1');
+    expect(html).toContain('<a href="/digest/2026-10-27">2026-10-27</a>');
+    expect(html).toContain('ok 4 · retry 0 · fail 0');
+  });
 });
