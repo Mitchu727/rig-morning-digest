@@ -89,8 +89,8 @@ Done when: the preview link no longer shows the lane marker.
 | 4 | [Digest JSON: add /api/digest/:night](https://github.com/Mitchu727/rig-morning-digest/issues/4) | #1, #2, #3 | Codex harness | 2026-10-29 |
 | 5 | [Status board: link nights to digest counts](https://github.com/Mitchu727/rig-morning-digest/issues/5) | #1, #2 | Codex harness (Mendel) | 2026-10-29 |
 | 6 | [Digest routes: cover success, missing, empty, and malformed nights](https://github.com/Mitchu727/rig-morning-digest/issues/6) | #1–#4 | Codex harness (Averroes) | 2026-10-29 |
-| 7 | [Review preview: publish the digest HTML](https://github.com/Mitchu727/rig-morning-digest/issues/7) | #2–#6; approved public host | Codex harness | — |
-| 8 | [Preview cleanup: remove the lane marker after review](https://github.com/Mitchu727/rig-morning-digest/issues/8) | #7; review | Codex harness | — |
+| 7 | [Review preview: publish the digest HTML](https://github.com/Mitchu727/rig-morning-digest/issues/7) | #2–#6; approved public host | Codex harness | 2026-10-29 |
+| 8 | [Preview cleanup: remove the lane marker after review](https://github.com/Mitchu727/rig-morning-digest/issues/8) | #7; review | Codex harness | 2026-10-29 |
 
 The preview is hosted on GitHub Pages at
 https://mitchu727.github.io/rig-morning-digest/S01E04.html. After review, the same link was
