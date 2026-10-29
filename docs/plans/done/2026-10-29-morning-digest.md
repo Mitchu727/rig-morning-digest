@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-29
 ---
 
 # Morning digest
@@ -64,9 +65,9 @@ Done when: `pnpm test` is green with the new tests.
 
 The reviewer reads the page from a copy, not from the lane. Run rig and save `/digest/2026-10-28` as
 one HTML file, lane banner included (a command, not a browser's "save as"; the page is
-self-contained, ADR 0001). Put it on your own public host, one where you can upload over it later (any bucket
-or static host, ADR 0003), so it opens from a public HTTPS link. Send the reviewer the link and the
-issues for this plan.
+self-contained, ADR 0001). Put it on your own public host, one where you can upload over it later
+(any bucket or static host, ADR 0003), so it opens from a public HTTPS link. Send the reviewer the
+link and the issues for this plan.
 
 Done when: the preview link is sent to the reviewer.
 
@@ -77,3 +78,20 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|------------|--------|--------|
+| 1 | [Digest contract: define the shared row type and reader signature](https://github.com/Mitchu727/rig-morning-digest/issues/1) | — | Codex harness | 2026-10-29 |
+| 2 | [Digest reader: aggregate a night’s run log](https://github.com/Mitchu727/rig-morning-digest/issues/2) | #1 | Codex harness (Turing) | 2026-10-29 |
+| 3 | [Digest page: render /digest/:night](https://github.com/Mitchu727/rig-morning-digest/issues/3) | #1, #2 | Codex harness (Bacon) | 2026-10-29 |
+| 4 | [Digest JSON: add /api/digest/:night](https://github.com/Mitchu727/rig-morning-digest/issues/4) | #1, #2, #3 | Codex harness | 2026-10-29 |
+| 5 | [Status board: link nights to digest counts](https://github.com/Mitchu727/rig-morning-digest/issues/5) | #1, #2 | Codex harness (Mendel) | 2026-10-29 |
+| 6 | [Digest routes: cover success, missing, empty, and malformed nights](https://github.com/Mitchu727/rig-morning-digest/issues/6) | #1–#4 | Codex harness (Averroes) | 2026-10-29 |
+| 7 | [Review preview: publish the digest HTML](https://github.com/Mitchu727/rig-morning-digest/issues/7) | #2–#6; approved public host | Codex harness | — |
+| 8 | [Preview cleanup: remove the lane marker after review](https://github.com/Mitchu727/rig-morning-digest/issues/8) | #7; review | Codex harness | — |
+
+The preview is hosted on GitHub Pages at
+https://mitchu727.github.io/rig-morning-digest/S01E04.html. After review, the same link was
+overwritten with the marker-free page.
