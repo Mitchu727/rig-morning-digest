@@ -77,6 +77,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/rig-preview"
           pnpm run preview:render "$RUNNER_TEMP/rig-preview/index.html"
+          cp "$RUNNER_TEMP/rig-preview/index.html" "$RUNNER_TEMP/rig-preview/S01E04.html"
 
       - name: Upload the temporary Pages artifact
         uses: actions/upload-pages-artifact@v5
@@ -91,4 +92,6 @@ jobs:
       - name: Show the preview URL
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: echo "${PAGE_URL%/}/" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Canonical preview: ${PAGE_URL%/}/S01E04.html" >> "$GITHUB_STEP_SUMMARY"
+          echo "Homepage: ${PAGE_URL%/}/" >> "$GITHUB_STEP_SUMMARY"
